@@ -1,15 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MainApp from "../layouts/MainApp.astro";
-import Card from "../components/Card.astro";
+// import Card from "../components/Card.astro";
+import * as Checkbox from "@radix-ui/react-checkbox";
+// import { CheckIcon } from '@radix-ui/themes';
 import "@radix-ui/themes/styles.css";
-import { Theme, ThemePanel, Flex, Text, Button } from "@radix-ui/themes";
+import { Theme, Flex, Button, Box, Card, Avatar, Text } from "@radix-ui/themes";
 ---
 
 <Layout title="Welcome to Astro." favicon="/favicon.svg">
-	
-	<Theme>
-		<MainApp />
+	<Theme
+		accentColor="mint"
+		grayColor="gray"
+		panelBackground="solid"
+		scaling="100%"
+		radius="full"
+	>
+		<Box maxWidth="240px">
+			<Card>
+				<Flex gap="3" align="center">
+					<Avatar
+						size="3"
+						src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop"
+						radius="full"
+						fallback="T"
+					/>
+					<Box>
+						<Text as="div" size="2" weight="bold">
+							Teodros Girmay
+						</Text>
+						<Text as="div" size="2" color="gray">
+							Engineering
+						</Text>
+					</Box>
+				</Flex>
+			</Card>
+		</Box>
 	</Theme>
 </Layout>
 
