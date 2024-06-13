@@ -2,32 +2,62 @@
 import Layout from "../layouts/Layout.astro";
 // import { CheckIcon } from '@radix-ui/themes';
 import "@radix-ui/themes/styles.css";
-import { Theme, Flex, Button, Box, Card, Avatar, Text } from "@radix-ui/themes";
+import { Image } from "astro:assets";
+import {
+	Theme,
+	Flex,
+	Button,
+	Box,
+	Card,
+	Avatar,
+	Text,
+	Badge,
+	Container,
+} from "@radix-ui/themes";
+import imagem from "../assets/profile.png"
 ---
 
 <Layout title="Welcome to Astro." favicon="/favicon.svg">
-	<Theme
-		 appearance="dark"
-	>
-		<Box maxWidth="240px">
-			<Card>
-				<Flex gap="3" align="center">
-					<Avatar
-						size="3"
-						src="https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?&w=64&h=64&dpr=2&q=70&crop=focalpoint&fp-x=0.67&fp-y=0.5&fp-z=1.4&fit=crop"
-						radius="full"
-						fallback="T"
-					/>
-					<Box>
-						<Text as="div" size="2" weight="bold">
-							Teodros Girmay
-						</Text>
-						<Text as="div" size="2" color="gray">
-							Engineering
-						</Text>
-					</Box>
-				</Flex>
-			</Card>
+	<Theme appearance="dark">
+		 
+		<Box
+			
+		>
+			<Container size="2" style={{
+
+				// background: 'red'
+			}
+			}>
+				<Box py="9" >
+					<Flex gap="3" >
+						<Badge color="orange">In progress</Badge>
+						<Badge color="blue">In review</Badge>
+						<Badge color="green">Complete</Badge>
+					</Flex>
+					<Button>
+						<BookmarkIcon /> Bookmark
+					  </Button>
+				</Box>
+				<Box>
+					<Card >
+						<Flex gap="3" align="center">
+							<Avatar
+								src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
+								fallback="A"
+							/>
+							<Avatar fallback="A" />
+							<Box>
+								<Text as="div" size="2" weight="bold">
+									Teodros Girmay
+								</Text>
+								<Text as="div" size="2" color="gray">
+									Engineering
+								</Text>
+							</Box>
+						</Flex>
+					</Card>
+				</Box>
+			</Container>
 		</Box>
 	</Theme>
 </Layout>
