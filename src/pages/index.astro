@@ -4,7 +4,14 @@ import Layout from "../layouts/Layout.astro";
 import { Theme, ThemePanel, Flex, Text, Button } from "@radix-ui/themes";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import "@radix-ui/themes/styles.css";
+import * as ContextMenu from '@radix-ui/react-context-menu';
+const response = await fetch('https://randomuser.me/api/');
+const data = await response.json();
+const randomUser = data.results[0];
 ---
+<!-- Data fetched at build can be rendered in HTML -->
+<h1>User</h1>
+<h2>{randomUser.name.first} {randomUser.name.last}</h2>
 <Layout title="Welcome to Astro." favicon="/favicon.svg">
 	<Theme
 		accentColor="mint"
@@ -13,6 +20,7 @@ import "@radix-ui/themes/styles.css";
 		scaling="100%"
 		radius="full"
 	>
+	
 		<Flex gap="3" align="center">
 			<Button variant="classic">
 				Get started <ArrowRightIcon />
